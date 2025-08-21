@@ -1,0 +1,72 @@
+# -------------------------
+# Node.js
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# -------------------------
+# Environment files
+# -------------------------
+.env
+.env.*.local
+
+# -------------------------
+# Logs
+# -------------------------
+logs
+*.log
+*.out
+*.err
+debug/
+
+# -------------------------
+# Angular
+# -------------------------
+/dist/
+/out-tsc/
+/.angular/
+/coverage/
+
+# Angular cache
+/.angular/cache
+/.angular/local
+
+# -------------------------
+# TypeScript
+# -------------------------
+*.tsbuildinfo
+
+# -------------------------
+# Compiled source
+# -------------------------
+*.dll
+*.exe
+*.so
+*.dylib
+*.pyc
+*.pyo
+*.pyd
+
+# -------------------------
+# IDE / Editor files
+# -------------------------
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
+
+# -------------------------
+# System files
+# -------------------------
+.DS_Store
+Thumbs.db
