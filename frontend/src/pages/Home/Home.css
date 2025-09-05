@@ -1,0 +1,143 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+/* Premium Hero */
+.home-hero{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 24px;
+    padding: 48px;
+    margin-top: 40px;
+    background: linear-gradient(135deg, rgba(245,158,11,0.10), rgba(217,119,6,0.10)), url('/header_img.png') no-repeat;
+    background-size: contain;
+    background-position: right center;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.home-hero-content h1{
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-900);
+}
+.home-hero-content p{
+    margin-top: 12px;
+    color: var(--text-600);
+}
+.home-hero-actions{
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.home-hero-search{
+    display: grid;
+    grid-template-columns: 20px 1fr auto;
+    align-items: center;
+    gap: 12px;
+    background: var(--surface);
+    border: 1px solid var(--muted-200);
+    border-radius: var(--radius-full);
+    padding: 10px 12px 10px 14px;
+    box-shadow: var(--shadow-md);
+}
+.home-hero-search img{ width: 20px; opacity: 0.7; }
+.home-hero-search input{
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    color: var(--text-900);
+}
+.home-hero-search button{
+    border: none;
+    background: var(--primary-600);
+    color: white;
+    padding: 10px 16px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+}
+.home-hero-search button:hover{ background: var(--primary-500); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+.home-hero-badges{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.home-hero-badges span{
+    background: var(--surface);
+    border: 1px solid var(--muted-200);
+    color: var(--text-700);
+    border-radius: var(--radius-full);
+    padding: 8px 12px;
+    font-size: 12px;
+}
+
+.home-hero-art{
+    position: relative;
+    height: 360px;
+}
+.blob{ position: absolute; filter: blur(30px); opacity: 0.8; border-radius: 50%; }
+.blob-1{ width: 240px; height: 240px; background: #ffedd5; top: 10%; left: 10%; }
+.blob-2{ width: 220px; height: 220px; background: #fde68a; bottom: 10%; right: 15%; }
+.blob-3{ width: 180px; height: 180px; background: #fcd34d; top: 40%; right: 5%; }
+
+/* Sections */
+.home-section{ display: flex; flex-direction: column; gap: 18px; }
+.section-head h2{ font-weight: 800; font-size: clamp(22px, 2.4vw, 32px); }
+.section-head p{ color: var(--text-500); }
+
+/* Featured overrides spacing from FoodDisplay */
+.home-featured .food-display{ margin-top: 10px; }
+
+/* Benefits */
+.home-benefits{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+.benefit{
+    background: var(--surface);
+    border: 1px solid var(--muted-200);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+}
+.benefit .icon{ font-size: 24px; }
+.benefit h3{ margin-top: 8px; font-size: 16px; font-weight: 700; }
+.benefit p{ margin-top: 6px; color: var(--text-600); font-size: 14px; }
+
+/* App Section */
+.home-app .home-app-card{
+    background: linear-gradient(135deg, rgba(22,163,74,0.12), rgba(34,197,94,0.10));
+    border: 1px solid var(--muted-200);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 900px){
+    .home-hero{ grid-template-columns: 1fr; padding: 28px; background-size: cover; background-position: center; }
+    .home-hero-art{ display: none; }
+    .home-benefits{ grid-template-columns: repeat(2,1fr); }
+}
+
+@media (max-width: 600px){
+    .home-hero{ padding: 20px; margin-top: 12px; }
+    .home-hero-content{ background: rgba(255,255,255,0.8); border: 1px solid var(--muted-200); border-radius: var(--radius-lg); padding: 14px; box-shadow: var(--shadow-sm); }
+    .home-hero-content h1{ font-size: clamp(20px, 7vw, 28px); }
+    .home-hero-content p{ font-size: 14px; }
+    .home-hero-search{ grid-template-columns: 18px 1fr auto; padding: 8px 10px 8px 12px; }
+    .home-hero-badges{ gap: 8px; }
+    .home-benefits{ grid-template-columns: 1fr; }
+}
+
