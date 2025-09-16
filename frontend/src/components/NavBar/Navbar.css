@@ -9,6 +9,11 @@
     background: rgba(255,255,255,0.7);
     backdrop-filter: blur(8px);
 }
+.navbar h1 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .navbar .logo{
     width: 150px;
 }

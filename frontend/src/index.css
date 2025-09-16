@@ -22,6 +22,7 @@
   --shadow-md: 0 6px 16px rgba(10, 12, 17, 0.12);
   --shadow-lg: 0 14px 32px rgba(10, 12, 17, 0.16);
   --transition-fast: 200ms ease;
+  --gradient: linear-gradient(90deg, #ffa500, #ff6347);
 }
 
 *{

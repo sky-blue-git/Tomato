@@ -30,7 +30,11 @@
     margin-bottom: 10px;
     cursor: pointer;
 }
-
+.footer-content-left h1 {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .footer-content-right h2, .footer-content-center h2{
     color: var(--text-900);
     font-weight: 800;
