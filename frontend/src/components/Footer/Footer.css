@@ -6,9 +6,9 @@
     align-items: center;
     gap: 20px;
     padding: 20px 8vw;
-    padding-top: 80px;
-    margin-top : 100px;
-    border-top: 1px solid var(--muted-200);
+    padding-top: 40px;
+    margin-top: 0;
+    border-top: 2px solid var(--muted-300);
 }
 
 .footer-content{

@@ -38,6 +38,15 @@ body{
   color: var(--text-900);
 }
 
+/* Glass effect variables */
+:root {
+  --glass-bg: rgba(255,255,255,0.28);
+  --glass-border: rgba(255,255,255,0.35);
+  --glass-blur: 12px;
+}
+
+html, body{ height: 100%; }
+
 a{
   text-decoration: none;
   color: inherit;
@@ -46,6 +55,25 @@ a{
 .app{
   width: 88%;
   margin : auto;
+}
+
+/* Subtle glassmorphism utility for foreground content */
+.glass{
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: saturate(140%) blur(var(--glass-blur));
+  -webkit-backdrop-filter: saturate(140%) blur(var(--glass-blur));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+/* Apply glass effect by default to semantic sections so content scrolls over fixed bg */
+main, section{
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: saturate(140%) blur(var(--glass-blur));
+  -webkit-backdrop-filter: saturate(140%) blur(var(--glass-blur));
+  border-radius: var(--radius-lg);
 }
 
 /* Micro-interactions */
