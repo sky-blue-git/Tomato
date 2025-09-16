@@ -9,17 +9,7 @@ const Footer = () => {
           <img src={assets.logo} alt="Aurora Eats" />
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro
-            suscipit officia aperiam mollitia atque enim libero? Recusandae
-            cumque veritatis voluptatibus qui. Molestiae ut ipsam repellendus
-            nihil dignissimos natus illo? Enim possimus cumque, harum voluptate
-            similique culpa placeat neque beatae quia esse maiores nostrum
-            voluptas molestias cum rem, dolorum suscipit sunt, officiis
-            architecto. Similique modi totam possimus qui? Ullam adipisci
-            dolorum ex incidunt quia aliquid totam magnam ea libero, ipsum sint
-            assumenda culpa voluptatibus quas suscipit! Incidunt eligendi rem
-            pariatur ipsa, obcaecati amet optio, sapiente dolorem vitae minus
-            accusantium enim corporis reprehenderit a officia odio fugit ut.
-            Ipsam quo excepturi ex?
+            suscipit officia aperiam mollitia atque enim libero?
           </p>
           <div className="footer-social-icons">
             <img src={assets.facebook_icon} alt="" />

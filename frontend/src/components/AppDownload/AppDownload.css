@@ -10,7 +10,8 @@
 }
 .app-download p{
   margin-top: 6px;
-  color: var(--text-600);
+  color: #000000;
+  border-bottom: none;
 }
 .app-download-platforms {
   display: flex;
