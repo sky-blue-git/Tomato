@@ -1,12 +1,50 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import './Home.css'
 import ExploreMenu from '../../components/ExploreMenu/ExploreMenu'
 import FoodDisplay from '../../components/FoodDisplay/FoodDisplay'
 import AppDownload from '../../components/AppDownload/AppDownload'
 import { assets } from '../../assets/assets'
+import { StoreContext } from '../../context/StoreContext'
 
 const Home = () => {
-  const [category, setCategory] = React.useState('All');
+  const [category, setCategory] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredFoodList, setFilteredFoodList] = useState([]);
+  const { food_list } = useContext(StoreContext);
+  const [isSearching, setIsSearching] = useState(false);
+
+  const handleSearch = () => {
+    if (!searchQuery.trim()) {
+      setIsSearching(false);
+      setFilteredFoodList([]);
+      return;
+    }
+
+    const query = searchQuery.toLowerCase();
+    const filtered = food_list.filter(item => 
+      item.name.toLowerCase().includes(query) || 
+      (item.description && item.description.toLowerCase().includes(query)) ||
+      (item.category && item.category.toLowerCase().includes(query))
+    );
+    
+    setFilteredFoodList(filtered);
+    setIsSearching(true);
+    
+    // Scroll to food display section
+    document.getElementById('food-display')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
+  const clearSearch = () => {
+    setSearchQuery('');
+    setIsSearching(false);
+    setFilteredFoodList([]);
+  };
 
   return (
     <div className="home">
@@ -18,8 +56,13 @@ const Home = () => {
           <div className="home-hero-actions">
             <div className="home-hero-search">
               <img src={assets.search_icon} alt="search" />
-              <input placeholder="Search dishes, cuisines, or restaurants" />
-              <button>Search</button>
+              <input 
+                placeholder="Search dishes, cuisines, or restaurants" 
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onKeyPress={handleKeyPress}
+              />
+              <button onClick={handleSearch}>Search</button>
             </div>
             <div className="home-hero-badges">
               <span>🚚 25 min avg delivery</span>
@@ -47,10 +90,20 @@ const Home = () => {
       {/* Featured Grid */}
       <section className="home-section home-featured">
         <div className="section-head">
-          <h2>Featured this week</h2>
-          <p>Hand-picked dishes people love right now.</p>
+          {isSearching ? (
+            <div className="search-results-header">
+              <h2>Search Results</h2>
+              <p>Found {filteredFoodList.length} items matching "{searchQuery}"</p>
+              <button className="clear-search" onClick={clearSearch}>Clear Search</button>
+            </div>
+          ) : (
+            <>
+              <h2>Featured this week</h2>
+              <p>Hand-picked dishes people love right now.</p>
+            </>
+          )}
         </div>
-        <FoodDisplay category={category} />
+        <FoodDisplay category={category} searchResults={isSearching ? filteredFoodList : null} />
       </section>
 
       {/* Benefits */}

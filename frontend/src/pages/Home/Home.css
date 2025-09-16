@@ -113,6 +113,10 @@
 .section-head h2{ font-weight: 800; font-size: clamp(22px, 2.4vw, 32px); color: #000000; }
 .section-head p{ color: #000000; }
 
+/* Override for home-curated section */
+.home-curated .section-head h2{ color: white; }
+.home-curated .section-head p{ color: white; }
+
 /* Featured overrides spacing from FoodDisplay */
 .home-featured .food-display{ margin-top: 10px; }
 
@@ -211,6 +215,44 @@
 .home-app .app-download {
     position: relative;
     z-index: 1;
+}
+
+/* Search Results Styling */
+.search-results-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.search-results-header h2 {
+    color: var(--primary-600);
+}
+
+.clear-search {
+    align-self: flex-start;
+    background: var(--primary-600);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    margin-top: 8px;
+}
+
+.clear-search:hover {
+    background: var(--primary-500);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.no-results {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-600);
+    font-size: 16px;
+    width: 100%;
 }
 
 @media (max-width: 900px){

@@ -5,13 +5,13 @@
 }
 
 .explore-menu h1{
-    color: var(--text-900);
+    color: white;
     font-weight : 700;
 }
 
 .explore-menu-text {
     max-width: 60%;
-    color: var(--text-500);
+    color: white;
 }
 
 .explore-menu-list{
@@ -50,7 +50,7 @@
 .explore-menu hr{
     margin: 10px 0px;
     height : 2px;
-    background-color: var(--muted-200);
+    background-color: var(--primary-600); /* Changed from muted-200 to primary-600 (orange) */
     border: none;
 
 }
